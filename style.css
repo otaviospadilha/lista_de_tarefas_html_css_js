@@ -53,7 +53,7 @@ button {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 60%;
+    width: 70%;
     margin: 2rem;
 }
 
@@ -146,3 +146,20 @@ button {
     text-decoration-color: var(--text-color-checked);
     text-decoration-thickness: .3rem;
 }
+
+
+@media screen and (max-width: 800px) {
+    .task_container,
+    .task_add,
+    .task_list {
+        width: 90%;
+    }
+
+    .task_icon button {
+        margin-right:0.5rem;
+    }
+
+    .task_item {
+        margin: 0;
+    }
+  }

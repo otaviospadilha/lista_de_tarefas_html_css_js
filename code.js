@@ -1,23 +1,29 @@
 
 const tasksArray = JSON.parse(localStorage.getItem('tasks')) || [];
 
-const setTask = () => {
-  const text = document.getElementById("taskAdd").value;
-  let task = {
-    task: text,
-    situation: '',
-  }
+const taskForm = document.querySelector('#taskForm');
 
+taskForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const text = document.getElementById('taskAdd').value;
+  console.log(text)
   if (text === '') {
     alert('Digite algo na caixa de texto antes de adicionar a tarefa');
     return
   } else {
-    tasksArray.push(task);
-    localStorage.setItem('tasks', JSON.stringify(tasksArray));
-
-    showScreen();
-    document.getElementById("taskAdd").value = '';
+    setTask(text);
   }
+})
+
+const setTask = (text) => {
+  let task = {
+    task: text,
+    situation: '',
+  }
+  tasksArray.push(task);
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
+  showScreen();
+  document.getElementById("taskAdd").value = '';
 }
 
 const removeTask = (index) => {

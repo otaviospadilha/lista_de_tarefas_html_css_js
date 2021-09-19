@@ -20,12 +20,12 @@
   </header>
   <main>
     <div class="task_container">
-      <div class="task_add">
-        <input id="taskAdd" type="text" placeholder="Digite sua tarefa aqui">
-        <button class="task_icon" onclick=setTask()>
+      <form id="taskForm" class="task_add">
+        <input id="taskAdd" type="text" autocomplete="off" placeholder="Digite sua tarefa aqui">
+        <button type="submit" class="task_icon">
           <i class="fas fa-plus"></i>
         </button>
-      </div>
+      </form>
       <div class="task_list" id="taskList">
       </div>
     </div>
